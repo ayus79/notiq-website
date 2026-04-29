@@ -4,13 +4,13 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="404 — notiq">
+<Layout title="404 - notiq">
   <Header />
   <main class="min-h-[70vh] flex items-center px-4 sm:px-6">
     <div class="max-w-5xl mx-auto w-full">
       <p class="font-mono text-xs text-orange-500 mb-4">404</p>
       <h1 class="text-4xl font-bold text-ink dark:text-zinc-50 mb-3">Notification not found.</h1>
-      <p class="text-muted dark:text-zinc-400 mb-8">This page doesn't exist — or was delivered to the wrong channel.</p>
+      <p class="text-muted dark:text-zinc-400 mb-8">This page doesn't exist - or was delivered to the wrong channel.</p>
       <div class="flex gap-3">
         <a href={`${import.meta.env.BASE_URL}`} class="text-sm font-semibold px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white transition-colors">Back home</a>
         <a href={`${import.meta.env.BASE_URL}features`} class="text-sm font-semibold px-4 py-2 rounded-lg border border-border dark:border-zinc-700 text-ink dark:text-zinc-200 hover:border-orange-400 transition-colors">Explore features</a>

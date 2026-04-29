@@ -1,7 +1,7 @@
 ---
 interface Props { title?: string; description?: string; }
 const {
-  title = 'notiq — Notifications, handled.',
+  title = 'notiq - Notifications, handled.',
   description = 'Route email, SMS, and in-app notifications from a single Python client.',
 } = Astro.props;
 ---
@@ -13,7 +13,7 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
