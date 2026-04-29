@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Pricing — notiq" description="Pricing coming soon.">
+  <Header />
+  <main class="min-h-[70vh] flex items-center px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto w-full">
+      <p class="text-xs font-semibold tracking-widest uppercase text-orange-500 mb-5">Pricing</p>
+      <h1 class="text-4xl font-bold tracking-tight text-ink dark:text-zinc-50 mb-4">Coming soon.</h1>
+      <p class="text-lg text-muted dark:text-zinc-400 max-w-md leading-relaxed mb-8">
+        We're still working out the details. notiq will have a generous free tier — always.
+        Drop your email and we'll let you know when pricing goes live.
+      </p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md" onsubmit="return false;">
+        <input
+          type="email"
+          placeholder="you@example.com"
+          class="flex-1 px-4 py-2.5 rounded-xl border border-border dark:border-zinc-700 bg-paper dark:bg-zinc-900 text-ink dark:text-zinc-100 placeholder-muted dark:placeholder-zinc-500 text-sm outline-none focus:border-orange-400 dark:focus:border-orange-500 transition-colors"
+        />
+        <button type="submit"
+          class="px-5 py-2.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition-colors whitespace-nowrap">
+          Notify me
+        </button>
+      </form>
+    </div>
+  </main>
+  <Footer />
+</Layout>

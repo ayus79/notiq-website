@@ -1,0 +1,72 @@
+---
+---
+
+<section class="py-20 bg-gray-50 dark:bg-gray-900/40">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Text -->
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 leading-tight">
+          Built for developers,<br />
+          <span class="bg-gradient-to-r from-brand-500 to-brand-700 bg-clip-text text-transparent">not email admins</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 text-lg mb-8 leading-relaxed">
+          The notiq Python SDK is typed, async-ready, and designed to feel native to your stack.
+          Install it, initialize a client, and you're sending in under a minute.
+        </p>
+        <ul class="space-y-3">
+          {[
+            'Full type hints + mypy support',
+            'Async-first with asyncio & trio',
+            'Automatic retries with backoff',
+            'Works with Django, FastAPI, Flask, or plain Python',
+            'Template variables, conditions, and layouts',
+          ].map((item) => (
+            <li class="flex items-center gap-3 text-gray-700 dark:text-gray-300 text-sm">
+              <svg class="w-5 h-5 text-brand-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Code window -->
+      <div class="rounded-2xl overflow-hidden border border-gray-800 shadow-2xl bg-gray-950">
+        <!-- Title bar -->
+        <div class="flex items-center gap-2 px-4 py-3 bg-gray-900 border-b border-gray-800">
+          <span class="w-3 h-3 rounded-full bg-red-500"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+          <span class="w-3 h-3 rounded-full bg-green-500"></span>
+          <span class="ml-2 text-xs text-gray-500 font-mono">notify_user.py</span>
+        </div>
+        <!-- Code -->
+        <pre class="p-6 text-sm font-mono leading-[1.8] overflow-x-auto"><code><span class="text-violet-400">import</span> <span class="text-white">notiq</span>
+
+<span class="text-gray-500"># Initialize with your API key</span>
+<span class="text-sky-400">client</span> <span class="text-gray-400">=</span> <span class="text-white">notiq</span><span class="text-gray-400">.</span><span class="text-yellow-300">Client</span><span class="text-gray-400">(</span>
+    <span class="text-green-400">api_key</span><span class="text-gray-400">=</span><span class="text-orange-300">"nq_live_xxxxxxxxxxxx"</span>
+<span class="text-gray-400">)</span>
+
+<span class="text-gray-500"># Route to multiple channels in one call</span>
+<span class="text-sky-400">response</span> <span class="text-gray-400">=</span> <span class="text-sky-400">client</span><span class="text-gray-400">.</span><span class="text-yellow-300">notify</span><span class="text-gray-400">(</span>
+    <span class="text-green-400">to</span><span class="text-gray-400">=</span><span class="text-orange-300">"sarah@example.com"</span><span class="text-gray-400">,</span>
+    <span class="text-green-400">event</span><span class="text-gray-400">=</span><span class="text-orange-300">"user.signup"</span><span class="text-gray-400">,</span>
+    <span class="text-green-400">channels</span><span class="text-gray-400">=[</span><span class="text-orange-300">"email"</span><span class="text-gray-400">,</span> <span class="text-orange-300">"sms"</span><span class="text-gray-400">,</span> <span class="text-orange-300">"in_app"</span><span class="text-gray-400">],</span>
+    <span class="text-green-400">data</span><span class="text-gray-400">={</span>
+        <span class="text-orange-300">"name"</span><span class="text-gray-400">:</span>        <span class="text-orange-300">"Sarah"</span><span class="text-gray-400">,</span>
+        <span class="text-orange-300">"plan"</span><span class="text-gray-400">:</span>        <span class="text-orange-300">"Pro"</span><span class="text-gray-400">,</span>
+        <span class="text-orange-300">"trial_days"</span><span class="text-gray-400">:</span>  <span class="text-cyan-400">14</span><span class="text-gray-400">,</span>
+    <span class="text-gray-400">},</span>
+<span class="text-gray-400">)</span>
+
+<span class="text-gray-500"># response.delivered_to → ['email', 'sms', 'in_app']</span>
+<span class="text-sky-400">print</span><span class="text-gray-400">(</span><span class="text-sky-400">response</span><span class="text-gray-400">.</span><span class="text-green-400">delivered_to</span><span class="text-gray-400">)</span>
+</code></pre>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,78 @@
+---
+const tiers = [
+  {
+    name: 'Free',
+    price: '$0',
+    note: 'forever',
+    desc: 'Side projects and early exploration.',
+    cta: 'Get started',
+    href: '#',
+    hot: false,
+    features: ['10k notifications / month', '2 channels', 'Community support', 'API access', 'Basic analytics'],
+  },
+  {
+    name: 'Pro',
+    price: '$29',
+    note: '/ month',
+    desc: 'Production apps and growing teams.',
+    cta: 'Start free trial',
+    href: '#',
+    hot: true,
+    features: ['Unlimited notifications', 'All 6 channels', 'Priority support', 'Advanced analytics', 'Custom templates', 'Delivery webhooks', 'Up to 5 seats'],
+  },
+  {
+    name: 'Enterprise',
+    price: 'Custom',
+    note: '',
+    desc: 'High-volume and compliance needs.',
+    cta: 'Talk to us',
+    href: 'mailto:hello@notiq.dev',
+    hot: false,
+    features: ['Everything in Pro', 'SSO / SAML', 'Uptime SLA', 'Dedicated support', 'Custom integrations', 'Audit logs', 'Volume pricing'],
+  },
+];
+---
+
+<section class="max-w-5xl mx-auto px-5 py-20">
+  <div class="mb-12">
+    <h2 class="text-3xl font-bold tracking-tight text-ink dark:text-zinc-50 mb-2">Pricing</h2>
+    <p class="text-muted dark:text-zinc-400">Start free. Scale without surprises.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {tiers.map(({ name, price, note, desc, cta, href, hot, features }) => (
+      <div class={`rounded-2xl border p-7 flex flex-col ${
+        hot
+          ? 'bg-orange-500 border-orange-400 text-white'
+          : 'bg-paper dark:bg-zinc-900 border-border dark:border-zinc-800'
+      }`}>
+        <div class="mb-5">
+          <h3 class={`font-bold mb-0.5 ${hot ? 'text-white' : 'text-ink dark:text-zinc-50'}`}>{name}</h3>
+          <p class={`text-xs ${hot ? 'text-orange-100' : 'text-muted dark:text-zinc-500'}`}>{desc}</p>
+        </div>
+        <div class="flex items-baseline gap-1 mb-6">
+          <span class={`text-4xl font-bold ${hot ? 'text-white' : 'text-ink dark:text-zinc-50'}`}>{price}</span>
+          {note && <span class={`text-sm ${hot ? 'text-orange-100' : 'text-muted dark:text-zinc-500'}`}>{note}</span>}
+        </div>
+        <a href={href}
+           class={`block text-center py-2.5 rounded-xl font-semibold text-sm transition-colors mb-7 ${
+             hot
+               ? 'bg-white text-orange-600 hover:bg-orange-50'
+               : 'bg-orange-500 text-white hover:bg-orange-600'
+           }`}>
+          {cta}
+        </a>
+        <ul class="space-y-2.5 mt-auto">
+          {features.map(f => (
+            <li class={`flex items-center gap-2.5 text-sm ${hot ? 'text-orange-50' : 'text-muted dark:text-zinc-400'}`}>
+              <svg class={`w-3.5 h-3.5 flex-shrink-0 ${hot ? 'text-white' : 'text-orange-500'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              {f}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

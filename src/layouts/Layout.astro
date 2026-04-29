@@ -1,0 +1,27 @@
+---
+interface Props { title?: string; description?: string; }
+const {
+  title = 'notiq — Notifications, handled.',
+  description = 'Route email, SMS, and in-app notifications from a single Python client.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <script is:inline>
+      (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.classList.add('dark');})();
+    </script>
+  </head>
+  <body class="bg-canvas dark:bg-zinc-950 text-ink dark:text-zinc-100 font-sans antialiased">
+    <slot />
+  </body>
+</html>

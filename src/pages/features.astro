@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Bento from '../components/Bento.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Features — notiq" description="Everything notiq can do for your notification stack.">
+  <Header />
+  <main class="pt-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 sm:pt-16 pb-4">
+      <p class="text-xs font-semibold tracking-widest uppercase text-orange-500 mb-4">Features</p>
+      <h1 class="text-4xl font-bold tracking-tight text-ink dark:text-zinc-50 mb-3">
+        Built for developers who ship.
+      </h1>
+      <p class="text-lg text-muted dark:text-zinc-400 max-w-xl">
+        Every feature in notiq was built to remove toil from notification infrastructure — not add to it.
+      </p>
+    </div>
+    <Bento />
+    <HowItWorks />
+  </main>
+  <Footer />
+</Layout>
