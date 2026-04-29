@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   site: 'https://ayus79.github.io',
-  base: '/notiq',
+  base: '/notiq-website',
   integrations: [tailwind()],
   output: 'static',
 });
