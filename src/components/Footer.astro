@@ -1,20 +1,20 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const links = {
-  Product:    [['Features', '/features'], ['Pricing', '/pricing']],
+  Product:    [['Features', `${base}/features`], ['Pricing', `${base}/pricing`]],
   Developers: [['Python SDK', '#'], ['API Reference', '#']],
-  Company:    [['About', '/about'], ['GitHub', 'https://github.com']],
+  Company:    [['About', `${base}/about`], ['GitHub', 'https://github.com/ayus79/notiq']],
 };
 ---
 
 <footer class="border-t border-border dark:border-zinc-800 bg-paper dark:bg-zinc-900/30">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-14">
 
-    <!-- Top: brand + links -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
 
-      <!-- Brand -->
       <div class="sm:col-span-2 lg:col-span-1">
-        <a href="/" class="flex items-center gap-2 font-semibold text-ink dark:text-zinc-50 mb-3 w-fit">
+        <a href={`${base}/`} class="flex items-center gap-2 font-semibold text-ink dark:text-zinc-50 mb-3 w-fit">
           <span class="w-6 h-6 rounded-md bg-orange-500 flex items-center justify-center flex-shrink-0">
             <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 16 16">
               <path d="M8 1a1.5 1.5 0 0 0-1.5 1.5V3A5 5 0 0 0 3 7.5v2.379l-.854.853A.5.5 0 0 0 2.5 11.5H6a2 2 0 0 0 4 0h3.5a.5.5 0 0 0 .354-.854L13 9.879V7.5A5 5 0 0 0 9.5 3v-.5A1.5 1.5 0 0 0 8 1z"/>
@@ -28,7 +28,6 @@ const links = {
         <p class="mt-2 text-xs text-muted/60 dark:text-zinc-600">MIT License</p>
       </div>
 
-      <!-- Link columns -->
       <div class="grid grid-cols-3 sm:grid-cols-3 lg:col-span-3 gap-6 sm:gap-8">
         {Object.entries(links).map(([section, items]) => (
           <div>
@@ -49,7 +48,6 @@ const links = {
       </div>
     </div>
 
-    <!-- Bottom bar -->
     <div class="border-t border-border dark:border-zinc-800 pt-5 flex flex-col sm:flex-row justify-between gap-2 text-xs text-muted dark:text-zinc-600">
       <p>© {new Date().getFullYear()} notiq. All rights reserved.</p>
       <p>Built with Astro &amp; Tailwind CSS</p>

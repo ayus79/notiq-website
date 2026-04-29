@@ -1,10 +1,10 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-20 sm:pt-20 sm:pb-24 lg:pt-28 lg:pb-32">
   <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-    <!-- Left: copy -->
     <div>
       <p class="text-xs font-semibold tracking-widest uppercase text-orange-500 mb-4 sm:mb-5 animate-rise">
         Open-source · Multi-channel notifications
@@ -17,18 +17,17 @@
         notiq is a multi-channel notification platform. Stop juggling separate libraries for every channel — one client handles it all.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 animate-rise-3">
-        <a href="/pricing"
+        <a href={`${base}/pricing`}
            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm transition-colors shadow-lg shadow-orange-500/25">
           Start for free
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
-        <a href="/features"
+        <a href={`${base}/features`}
            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border dark:border-zinc-700 text-ink dark:text-zinc-200 font-semibold text-sm hover:border-orange-400 dark:hover:border-orange-500 transition-colors">
           See how it works
         </a>
       </div>
 
-      <!-- Channel chips -->
       <div class="mt-8 sm:mt-10 flex flex-wrap gap-2 animate-rise-3">
         {['Email', 'SMS', 'In-app'].map(ch => (
           <span class="px-3 py-1 rounded-full text-xs font-medium border border-border dark:border-zinc-800 text-muted dark:text-zinc-500 bg-paper dark:bg-zinc-900">
@@ -38,7 +37,6 @@
       </div>
     </div>
 
-    <!-- Right: code terminal -->
     <div class="animate-rise-2 w-full min-w-0">
       <div class="rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950">
         <div class="flex items-center gap-1.5 px-4 py-3 bg-zinc-900 border-b border-zinc-800">
@@ -67,7 +65,6 @@
 <span class="text-zinc-500"># that's it.</span>
 </code></pre>
       </div>
-      <!-- install pill -->
       <div class="mt-3 flex items-center gap-3 px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 w-fit max-w-full">
         <span class="text-orange-400 font-mono text-xs">$</span>
         <span class="font-mono text-sm text-zinc-300 truncate">pip install notiq</span>
